@@ -19,6 +19,22 @@
     '';
   };
 
+  systemd.user.services."1password" = {
+    Unit = {
+      Description = "1Password Daemon";
+    };
+
+    Install = {
+      WantedBy = [ "graphical-session.target" ];
+    };
+
+    Service = {
+      Environment = "PATH=/run/wrappers/bin:/etc/profiles/per-user/root/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin";
+      ExecStart = "${pkgs._1password-gui}/bin/1password --silent";
+      RemainAfterExit = true;
+    };
+  };
+
   programs.ghostty = {
     enable = true;
     enableZshIntegration = true;
