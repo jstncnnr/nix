@@ -14,6 +14,7 @@
 
   networking.hostName = "nixos"; 
   networking.networkmanager.enable = true; 
+  networking.firewall.enable = false;
 
   time.timeZone = "America/Los_Angeles";
   time.hardwareClockInLocalTime = true;
@@ -46,11 +47,15 @@
     pkgs.neovim
   ];
 
+  services.openssh.enable = true;
+  networking.firewall.allowedTCPPorts = [ 22 ];
+
   desktops.gnome.enable = true;
 
   programs.brave.enable = true;
   programs.ghostty.enable = true;
   programs.home-manager.enable = true;
+  programs.steam.enable = true;
   programs.zsh.enable = true;
 
   # This option defines the first version of NixOS you have installed on this particular machine,
