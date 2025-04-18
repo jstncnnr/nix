@@ -45,6 +45,7 @@
   environment.systemPackages = [
     pkgs.git
     pkgs.neovim
+    pkgs.devenv
   ];
 
   services.openssh.enable = true;
