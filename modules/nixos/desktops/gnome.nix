@@ -25,6 +25,9 @@
     environment.systemPackages = [
       pkgs.gnomeExtensions.appindicator
       pkgs.gnomeExtensions.no-overview
+      pkgs.gnomeExtensions.notification-banner-position
+      pkgs.gnomeExtensions.sleep-through-notifications
+      pkgs.gnomeExtensions.window-is-ready-remover
     ];
 
     services.udev.packages = [
