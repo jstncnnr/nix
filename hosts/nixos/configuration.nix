@@ -76,7 +76,7 @@
     justin = {
       description = "Justin";
       isNormalUser = true;
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "wheel" "docker" ];
       shell = pkgs.zsh;
     };
 
@@ -90,4 +90,13 @@
 
   # Required if users.users.<name>.shell = pkgs.zsh
   programs.zsh.enable = true;
+
+  # Add cachix binary cache
+  nix.extraOptions = ''
+    extra-substituters = https://devenv.cachix.org
+    extra-trusted-public-keys = devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=
+  '';
+
+  # Enable docker 
+  virtualisation.docker.enable = true;
 }
