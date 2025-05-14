@@ -18,6 +18,12 @@
   # Defined in modules/nixos/common/audio.nix
   system.audio.engine = "pipewire";
 
+  # Defined in modules/nixos/displayManager
+  system.displayManager = "gdm";
+
+  # Defined in modules/nixos/desktopEnvironment
+  system.desktopEnvironment = "gnome";
+
   # Setup user accounts
   users.users.justin = {
     description = "Justin";
@@ -26,8 +32,12 @@
     shell = pkgs.zsh;
   };
 
-  programs._1password.enable = true;
+  # Required when user.shell = pkgs.zsh
   programs.zsh.enable = true;
+
+  # Some additional setup defined in
+  # modules/nixos/programs/1password.nix
+  programs._1password.enable = true;
 
   # Setup sshd
   services.openssh.enable = true;
@@ -46,17 +56,7 @@
   ];
   hardware.printers.ensureDefaultPrinter = "Check-Printer";
 
-  # Setup gdm
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-
-  # Setup gnome
-  services.xserver.desktopManager.gnome.enable = true;
-
-  services.udev.packages = [
-    pkgs.gnome-settings-daemon
-  ];
-
+  # Remove some unused gnome packages
   environment.gnome.excludePackages = [
     pkgs.geary
     pkgs.gnome-calendar
