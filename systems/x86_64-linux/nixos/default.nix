@@ -35,9 +35,10 @@
   # Required when user.shell = pkgs.zsh
   programs.zsh.enable = true;
 
-  # Some additional setup defined in
-  # modules/nixos/programs/1password.nix
+  # Some additional setup defaults defined in
+  # modules/nixos/programs
   programs._1password.enable = true;
+  programs.steam.enable = true;
 
   # Setup sshd
   services.openssh.enable = true;
