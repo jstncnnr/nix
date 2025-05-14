@@ -59,8 +59,11 @@
   ];
   hardware.printers.ensureDefaultPrinter = "Check-Printer";
 
-  # Install the gnumicr font
+  # Setup system-wide fonts
   fonts.packages = [
+    pkgs.nerd-fonts.meslo-lg
+    pkgs.nerd-fonts.jetbrains-mono
+
     inputs.self.packages.${system}.gnumicr
   ];
 
