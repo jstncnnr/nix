@@ -26,6 +26,7 @@
     shell = pkgs.zsh;
   };
 
+  programs._1password.enable = true;
   programs.zsh.enable = true;
 
   # Setup sshd
