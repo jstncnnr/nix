@@ -1,5 +1,7 @@
 {
   pkgs,
+  inputs,
+  system,
   ...
 }: {
   imports = [
@@ -56,6 +58,11 @@
     }
   ];
   hardware.printers.ensureDefaultPrinter = "Check-Printer";
+
+  # Install the gnumicr font
+  fonts.packages = [
+    inputs.self.packages.${system}.gnumicr
+  ];
 
   # Remove some unused gnome packages
   environment.gnome.excludePackages = [
