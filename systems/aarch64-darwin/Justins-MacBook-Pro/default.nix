@@ -79,7 +79,6 @@
   };
 
   environment.systemPackages = [
-    pkgs.neovim
   ];
 
   homebrew = {
