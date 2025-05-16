@@ -4,9 +4,7 @@
   ...
 }: {
   imports = [
-    # TODO: snowfall-lib automatically applies every home-manager module
-    # to every home. How can we define shared config between homes?
-    # inputs.self.homeModules.justin
+    inputs.self.sharedHomeModules.justin
   ];
 
   home.stateVersion = "24.11";

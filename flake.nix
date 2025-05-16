@@ -18,8 +18,20 @@
   };
 
   outputs = inputs:
-    inputs.snowfall-lib.mkFlake {
+  let
+    lib = inputs.snowfall-lib.mkLib {
       inherit inputs;
       src = ./.;
+    };
+
+    sharedModuleRoot = lib.snowfall.fs.get-snowfall-file "sharedModules";
+  in
+    (lib.mkFlake {
+      inherit inputs;
+      src = ./.;
+    }) // {
+      sharedHomeModules = lib.snowfall.module.create-modules { src = "${sharedModuleRoot}/home"; }; 
+      sharedNixosModules = lib.snowfall.module.create-module { src = "${sharedModuleRoot}/nixos"; };
+      sharedDarwinModules = lib.snowfall.module.create-module { src = "${sharedModuleRoot}/darwin"; };
     };
 }
