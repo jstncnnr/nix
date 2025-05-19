@@ -54,6 +54,11 @@
 
         "SUPER SHIFT, Q, exec, hyprlock"
       ];
+
+      windowrule = [
+        "workspace special:magic silent, class:discord"
+        "workspace 4 silent, class:Spotify"
+      ];
     };
   };
 
