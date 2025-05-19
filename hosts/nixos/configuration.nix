@@ -3,6 +3,7 @@
   config,
   inputs,
   pkgs,
+  perSystem,
   ...
 }: {
   imports = [
@@ -83,4 +84,11 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-macchiato.yaml";
     image = ../../share/wallpaper.png;
   };
+
+  # Fonts
+  fonts.packages = [
+    pkgs.nerd-fonts.jetbrains-mono
+
+    perSystem.self.gnumicr
+  ];
 }
