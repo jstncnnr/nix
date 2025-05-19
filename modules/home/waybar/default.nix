@@ -156,6 +156,7 @@
         color: @base08;
       }
 
+      #tray,
       #pulseaudio,
       #clock,
       #custom-notifications {
