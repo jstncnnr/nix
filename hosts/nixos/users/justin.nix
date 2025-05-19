@@ -45,7 +45,8 @@
         "SUPER, Return, exec, uwsm app -- ghostty"
         "SUPER, Space, exec, uwsm app -- $(wofi --show drun --define=drun-print_desktop_file=true)"
         "SUPER, E, exec, uwsm app -- nautilus"
-        "SUPER, B, exec, uwsm app -- brave"
+        "SUPER, B, exec, uwsm app -- brave --profile-directory=\"Default\""
+        "SUPER SHIFT, B, exec, uwsm app -- brave --profile-directory=\"Profile 1\""
         ", PRINT, exec, hyprshot -m region --clipboard-only"
 
         "SUPER, S, togglespecialworkspace, magic"
