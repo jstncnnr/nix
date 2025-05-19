@@ -15,6 +15,7 @@
         ];
 
         modules-right = [
+          "tray"
           "pulseaudio#output"
           "pulseaudio#input"
           "clock"
@@ -36,6 +37,14 @@
           persistent-workspaces = {
             "*" = 6;
           };
+          on-scroll-up = "hyprctl dispatch workspace e-1";
+          on-scroll-down = "hyprctl dispatch workspace e+1";
+        };
+
+        "tray" = {
+          icon-size = 16;
+          spacing = 8;
+          show-passive-items = true;
         };
 
         "pulseaudio#output" = {
