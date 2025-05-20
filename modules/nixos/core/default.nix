@@ -1,8 +1,13 @@
 {
   lib,
   pkgs,
+  inputs,
   ...
 }: {
+  imports = [
+    inputs.sops-nix.nixosModules.sops
+  ];
+
   nix = {
     settings = {
       auto-optimise-store = true;
@@ -52,4 +57,8 @@
       configurationLimit = lib.mkDefault 10;
     };
   };
+
+  # Sops
+  sops.defaultSopsFile = ../../../secrets/secrets.yaml;
+  sops.age.keyFile = lib.mkDefault "/var/lib/sops/age/keys.txt";
 }

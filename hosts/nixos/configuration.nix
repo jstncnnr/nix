@@ -23,11 +23,13 @@
   networking.networkmanager.enable = true;
 
   # Setup user accounts
+  sops.secrets."users/justin/password".neededForUsers = true;
   users.users.justin = {
     description = "Justin";
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel"];
     shell = pkgs.zsh;
+    hashedPasswordFile = config.sops.secrets."users/justin/password".path;
   };
 
   # Required when user.shell = pkgs.zsh

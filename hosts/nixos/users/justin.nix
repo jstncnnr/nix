@@ -18,6 +18,7 @@
     pkgs.citrix_workspace
     pkgs.devenv
     pkgs.ghostty
+    pkgs.hyprshot
     pkgs.prismlauncher
   ];
 
