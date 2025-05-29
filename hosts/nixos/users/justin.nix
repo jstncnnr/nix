@@ -10,6 +10,8 @@
     inputs.self.homeModules.waybar
     inputs.self.homeModules.hypridle
     inputs.self.homeModules.hyprlock
+
+    inputs.self.homeModules.office
   ];
 
   home.stateVersion = "24.11";
@@ -19,6 +21,7 @@
     pkgs.devenv
     pkgs.ghostty
     pkgs.hyprshot
+    pkgs.jetbrains-toolbox
     pkgs.prismlauncher
   ];
 
@@ -32,6 +35,7 @@
     swaync.enable = true;
     hyprpolkitagent.enable = true;
     cliphist.enable = true;
+    playerctld.enable = true;
   };
 
   wayland.windowManager.hyprland = {
@@ -61,6 +65,16 @@
         "workspace 4 silent, class:Spotify"
       ];
     };
+  };
+
+  services.swaync.settings = {
+    widgets = [
+      "inhibitors"
+      "title"
+      "dnd"
+      "mpris"
+      "notifications"
+    ];
   };
 
   home.pointerCursor = {
