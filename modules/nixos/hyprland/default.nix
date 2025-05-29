@@ -23,4 +23,8 @@ in {
   environment.systemPackages = [
     hyprland-dynamic-windows
   ];
+
+  xdg.portal.extraPortals = [
+    pkgs.xdg-desktop-portal-gtk
+  ];
 }

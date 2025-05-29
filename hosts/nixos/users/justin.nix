@@ -41,6 +41,9 @@
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = false;
+    package = null;
+    portalPackage = null;
+
     settings = {
       monitor = [
         "desc:Microstep MPG341CX OLED, 3440x1440@165, 0x0, 1, vrr, 2"
