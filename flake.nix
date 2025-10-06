@@ -5,7 +5,7 @@
     snowfall-lib.url = "github:snowfallorg/lib";
     snowfall-lib.inputs.nixpkgs.follows = "nixpkgs";
 
-    nvf.url = "github:NotAShelf/nvf";
+    nvf.url = "github:NotAShelf/nvf/v0.8";
     nvf.inputs.nixpkgs.follows = "nixpkgs";
   };
 

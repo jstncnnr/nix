@@ -189,7 +189,6 @@
       vim.lsp = {
         enable = true;
         formatOnSave = true;
-        null-ls.enable = true;
       };
 
       vim.mini = {
