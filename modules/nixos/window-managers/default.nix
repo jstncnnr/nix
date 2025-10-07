@@ -8,6 +8,7 @@
     programs.hyprland.withUWSM = lib.mkDefault true;
 
     environment.systemPackages = [
+      pkgs.adwaita-icon-theme
       pkgs.ghostty
       pkgs.hypridle
       pkgs.hyprlock
@@ -21,5 +22,15 @@
     ];
 
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+    programs.dconf.profiles.user.databases = [
+      {
+        settings."org/gnome/desktop/interface" = {
+          gtk-theme = "Adwaita";
+          icon-theme = "Adwaita";
+          cursor-theme = "Adwaita";
+        };
+      }
+    ];
   };
 }
